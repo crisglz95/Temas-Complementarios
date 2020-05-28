@@ -1,0 +1,14 @@
+<h1 class="text-center">Comunicacion Componentes Repaso</h1>
+<br>
+<div class="row text-center">
+    <div class="col-12">
+        <h3>{{valor}}</h3>
+    </div>
+    <div class="col-12">
+        <button type="button" class="btn btn-primary" (click)="Suma()">+</button>
+        <button type="button" class="btn btn-primary ml-2" (click)="Resta()">-</button>
+    </div>
+</div>
+<hr>
+
+<app-hijo2 [valorPadre]="valor" (valorHijo)="RecibirDato($event)"></app-hijo2>

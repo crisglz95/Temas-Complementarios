@@ -1,0 +1,30 @@
+<h1>NgClass & NgStyle</h1>
+
+<div class="cuadro" [ngStyle]="{'background': color ? 'green' : 'red'}">
+    <button class="btn btn-outline-primary" (click)="color = !color">Cambiar Color {{color}}</button>
+</div>
+
+<div class="cuadro" [style.background]="'blue'">
+
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let person of people" [ngStyle]="{'color': GetColor(person.country)}">{{person.name}}</li>
+</ul>
+
+
+<div class="cuadro" [ngClass]="{'bg-warning': true}"></div>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let person of people" [ngClass]="{
+        'text-success': person.country === 'MX',
+        'text-danger': person.country === 'USA',
+        'text-primary': person.country === 'CH',
+        'text-dark': person.country === 'MARS'
+    }">{{person.name}}</li>
+</ul>
+
+<div class="cuadro" appRandomColor></div>
+
+<div class="cuadro" appChangeColor></div>
+
+<input type="text" class="inputGrandote" appChangeInput>
